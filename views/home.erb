@@ -1,0 +1,45 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+        <h3>To Do</h3>
+        <table class="table">
+            <tbody>
+                <% @todo.each do |work| %>
+                    <%if work["done"] == false %>
+                        <tr>
+                            <th class="table-warning"><%=work["title"]%></th>
+                            <th class="table-warning text-right">
+                                <button type="button" class="btn btn-success">Done!</button>
+                                <button type="button" class="btn btn-danger">Eliminar!</button>
+                            </th>
+                        </tr>
+                    <%end%>
+                <%end%>
+            </tbody>
+        </table>   
+    </div>
+
+    <div class="col-sm-6">
+      <h3>Done</h3>
+      <table class="table">
+            <tbody>
+                <% @todo.each do |work| %>
+                    <%if work["done"] == true %>
+                        <tr>
+                            <th class="table-warning"><%=work["title"]%></th>
+                            <th class="table-warning text-right">
+                                <button type="button" class="btn btn-success">Todo!</button>
+                                <button type="button" class="btn btn-danger">Eliminar!</button>
+                            </th>
+                        </tr>
+                    <%end%>
+                <%end%>
+            </tbody>
+        </table>   
+      
+    </div>
+  </div>
+</div>
+
