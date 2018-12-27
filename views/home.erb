@@ -1,5 +1,5 @@
 
-
+<h1> </h1>
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
@@ -9,10 +9,24 @@
                 <% @todo.each do |work| %>
                     <%if work["done"] == false %>
                         <tr>
-                            <th class="table-warning"><%=work["title"]%></th>
-                            <th class="table-warning text-right">
-                                <button type="button" class="btn btn-success">Done!</button>
-                                <button type="button" class="btn btn-danger">Eliminar!</button>
+                            <th class="table-warning col-md-4"><h3><%=work["title"]%></h3></th>
+                            <th class="table-warning text-right col-md-1">
+
+                                <form action="/update" method="post">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control d-none" name="update" value="<%=work['id']%>"></input>
+                                    </div>
+                                    <button type="submit" value="Done!!" class="btn btn-success">Done!!</button>
+                                </form>
+                            </th>
+                            <th class="table-warning text-right col-md-1">
+
+                                <form action="/delete" method="post">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control d-none" name="delete" value="<%=work['id']%>"></input>
+                                    </div>
+                                    <button type="submit" value="Eliminar!!" class="btn btn-danger">Eliminar!!</button>
+                                </form>
                             </th>
                         </tr>
                     <%end%>
@@ -22,24 +36,30 @@
     </div>
 
     <div class="col-sm-6">
-      <h3>Done</h3>
-      <table class="table">
+        <h3>To Do</h3>
+        <table class="table">
             <tbody>
                 <% @todo.each do |work| %>
                     <%if work["done"] == true %>
                         <tr>
-                            <th class="table-warning"><%=work["title"]%></th>
-                            <th class="table-warning text-right">
-                                <button type="button" class="btn btn-success">Todo!</button>
-                                <button type="button" class="btn btn-danger">Eliminar!</button>
+                            <th class="table-success col-md-5"><h3 class="text-success"><%=work["title"]%></h3></th>
+                            <th class="table-success text-right col-md-1">
+                                <form action="/delete" method="post">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control d-none" name="delete" value="<%=work['id']%>"></input>
+                                    </div>
+                                    <button type="submit" value="Eliminar!!" class="btn btn-danger">Eliminar!!</button>
+                                </form>
                             </th>
                         </tr>
                     <%end%>
                 <%end%>
             </tbody>
         </table>   
-      
     </div>
+
+
+
   </div>
 </div>
 

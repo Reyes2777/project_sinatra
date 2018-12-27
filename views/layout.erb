@@ -9,11 +9,12 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark d-flex">
         <a class="navbar-brand" href="#">
-            <img src="bird.jpg" alt="Logo" style="width:40px;">
-        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#creatework">Nueva Tarea!!</button>
+            <img src="http://pngimage.net/wp-content/uploads/2018/06/tareas-png-2.png" alt="Logo" style="width:40px;">
         </a>
+        <h3 class="text-light">To Do!!</h3>
+        <button type="button" class="btn btn-primary ml-auto" data-toggle="modal" data-target="#creatework">Nueva Tarea!!</button>
     </nav>
 
     <div class="modal fade" id="creatework" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -29,8 +30,8 @@
 
                     <form action="/" method="post">
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">Example textarea</label>
-                            <textarea class="form-control" id="create" rows="3"></textarea>
+                            <label for="exampleFormControlTextarea1">Escribe la Tarea</label>
+                            <textarea class="form-control" id="create" name="create" rows="3"></textarea>
                         </div>
                         <button type="submit" value="Crear Tarea" class="btn btn-primary">Crear Tarea</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

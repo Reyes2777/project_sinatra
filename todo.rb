@@ -12,3 +12,15 @@ post "/" do
     Tarea.create(work)
     redirect "/"
 end
+
+post "/update" do
+    work_update = params[:update]
+    Tarea.update(work_update)
+    redirect "/"
+end
+
+post "/delete" do
+    work_update = params[:delete]
+    Tarea.destroy(work_update)
+    redirect "/"
+end
